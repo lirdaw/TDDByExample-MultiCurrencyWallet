@@ -1,2 +1,7 @@
-# Project exclude paths
-/target/
+# IDE folders
+.idea
+*.iml
+target/
+
+# libraries
+out/
