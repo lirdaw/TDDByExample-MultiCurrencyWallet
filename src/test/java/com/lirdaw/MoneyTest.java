@@ -34,4 +34,11 @@ class MoneyTest {
         Assertions.assertEquals("USD", Money.dollar(1).currency);
         Assertions.assertEquals("CHF", Money.franc(1).currency);
     }
+
+    @SuppressWarnings("SimplifiableJUnitAssertion")
+    @Test
+    void testDifferentClassEquality() {
+        Assertions.assertTrue(new Money(10, "CHF").equals(new Franc(10)));
+    }
 }
+
