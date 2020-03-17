@@ -2,14 +2,22 @@ package com.lirdaw;
 
 public abstract class Money {
     int amount;
+    String currency;
+
+    Money(int amount, String currency) {
+        this.amount = amount;
+        this.currency = currency;
+    }
 
     static Money dollar(int amount) {
-        return new Dollar(amount);
+        return new Dollar(amount, "USD");
     }
 
     static Money franc(int amount) {
-        return new Franc(amount);
+        return new Franc(amount, "CHF");
     }
+
+    abstract String currency();
 
     abstract Money times(int multiplier);
 

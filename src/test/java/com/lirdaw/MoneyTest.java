@@ -28,4 +28,10 @@ class MoneyTest {
         Assertions.assertEquals(Money.franc(10), five.times(2));
         Assertions.assertEquals(Money.franc(15), five.times(3));
     }
+
+    @Test
+    void testCurrency() {
+        Assertions.assertEquals("USD", Money.dollar(1).currency);
+        Assertions.assertEquals("CHF", Money.franc(1).currency);
+    }
 }
