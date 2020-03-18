@@ -1,10 +1,10 @@
 package com.lirdaw;
 
-class Money {
+class Money implements Expression {
     final String currency;
     private final int amount;
 
-    Money(int amount, String currency) {
+    private Money(int amount, String currency) {
         this.amount = amount;
         this.currency = currency;
     }
@@ -19,6 +19,10 @@ class Money {
 
     Money times(int multiplier) {
         return new Money(amount * multiplier, this.currency);
+    }
+
+    Expression plus(Money addend) {
+        return new Money(amount + addend.amount, this.currency);
     }
 
     @Override
