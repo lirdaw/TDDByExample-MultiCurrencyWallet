@@ -2,9 +2,9 @@ package com.lirdaw;
 
 class Money implements Expression {
     final String currency;
-    private final int amount;
+    final int amount;
 
-    private Money(int amount, String currency) {
+    Money(int amount, String currency) {
         this.amount = amount;
         this.currency = currency;
     }
@@ -21,8 +21,12 @@ class Money implements Expression {
         return new Money(amount * multiplier, this.currency);
     }
 
+    public Money reduce(String to) {
+        return this;
+    }
+
     Expression plus(Money addend) {
-        return new Money(amount + addend.amount, this.currency);
+        return new Sum(this, addend);
     }
 
     @Override
