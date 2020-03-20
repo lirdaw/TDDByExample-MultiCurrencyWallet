@@ -43,9 +43,4 @@ class Money implements Expression {
         Money money = (Money) object;
         return this.amount == money.amount && this.currency.equals(money.currency);
     }
-
-    @Override
-    public String toString() {
-        return "Money{" + "amount=" + amount + ", currency='" + currency + '\'' + '}';
-    }
 }
